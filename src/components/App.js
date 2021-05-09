@@ -44,12 +44,11 @@ let data = [
 
 export default function (props) {
   const printCards = () => {
-    let items = [];
-    for (let i = 0; i < data.length; i++) {
-      items.push(<Card userData={data[i]} />);
-    }
-    return items;
+    return data.map((item) => {
+      return <Card userData={item} />;
+    });
   };
+
   return (
     <>
       <Header>
