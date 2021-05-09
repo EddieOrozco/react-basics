@@ -4,25 +4,22 @@ export default function (props) {
   return (
     <div className='card'>
       <div className='image'>
-        <img
-          src='https://learn.g2.com/hubfs/What_is_Information_Technology.jpg'
-          alt=''
-        />
+        <img src={props.userData.imageUrl} alt='' />
       </div>
       <div className='content'>
-        <div className='header'>Matt Giampietro</div>
+        <div className='header'>{props.userData.fullName}</div>
         <div className='meta'>
-          <a href='#'>Friends</a>
+          <a href='#'>{props.userData.status}</a>
         </div>
-        <div className='description'>
-          Matthew is an interior designer living in New York.
-        </div>
+        <div className='description'>{props.userData.description}</div>
       </div>
       <div className='extra content'>
-        <span className='right floated'>Joined in 2013</span>
+        <span className='right floated'>
+          Joined in {props.userData.joinedYear}
+        </span>
         <span>
           <i className='user icon' />
-          75 Friends
+          {props.userData.totalFriends} Friends
         </span>
       </div>
     </div>
