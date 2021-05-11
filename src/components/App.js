@@ -42,10 +42,10 @@ let data = [
   },
 ];
 
-export default function (props) {
+const App = (props) => {
   const printCards = () => {
-    return data.map((item) => {
-      return <Card userData={item} />;
+    return data.map((item, i) => {
+      return <Card userData={item} key={i} />;
     });
   };
 
@@ -54,9 +54,9 @@ export default function (props) {
       <Header>
         <Logo>Logo</Logo>
         <nav>
-          <a href='#'>link</a>
-          <a href='#'>link</a>
-          <a href='#'>link</a>
+          <a href='/'>link</a>
+          <a href='/'>link</a>
+          <a href='/'>link</a>
         </nav>
       </Header>
       <main style={{ margin: '20px auto', width: '100%', maxWidth: '960px' }}>
@@ -64,4 +64,6 @@ export default function (props) {
       </main>
     </>
   );
-}
+};
+
+export default App;

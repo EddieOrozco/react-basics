@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function (props) {
+const Card = (props) => {
   return (
     <div className='card'>
       <div className='image'>
@@ -9,7 +9,7 @@ export default function (props) {
       <div className='content'>
         <div className='header'>{props.userData.fullName}</div>
         <div className='meta'>
-          <a href='#'>{props.userData.status}</a>
+          <a href='/'>{props.userData.status}</a>
         </div>
         <div className='description'>{props.userData.description}</div>
       </div>
@@ -24,4 +24,6 @@ export default function (props) {
       </div>
     </div>
   );
-}
+};
+
+export default Card;
