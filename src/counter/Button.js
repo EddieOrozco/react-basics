@@ -3,6 +3,9 @@ import React from 'react';
 const Button = (props) => {
   // Function w/ Conditional to add and subtract points
   const clickedBtn = () => {
+    if (props.points == props.goal) {
+      props.setGoal(props.points * 2);
+    }
     if (props.value == 'plus') {
       props.setPoints(props.points + 1);
     } else {
