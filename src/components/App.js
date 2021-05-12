@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Logo from './Logo';
-import Card from './Card';
+import Counter from '../counter/Counter';
 
 let data = [
   {
@@ -43,12 +43,6 @@ let data = [
 ];
 
 const App = (props) => {
-  const printCards = () => {
-    return data.map((item, i) => {
-      return <Card userData={item} key={i} />;
-    });
-  };
-
   return (
     <>
       <Header>
@@ -59,8 +53,15 @@ const App = (props) => {
           <a href='/'>link</a>
         </nav>
       </Header>
-      <main style={{ margin: '20px auto', width: '100%', maxWidth: '960px' }}>
-        <div className='ui link cards'>{printCards()}</div>
+      <main
+        style={{
+          margin: '0 auto',
+          width: '100%',
+          maxWidth: '960px',
+          padding: '20px 20px',
+        }}
+      >
+        <Counter />
       </main>
     </>
   );
