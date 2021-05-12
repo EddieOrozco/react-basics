@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Logo from './Logo';
 import Counter from '../counter/Counter';
+import Form from '../form/Form';
 
 let data = [
   {
@@ -61,7 +62,7 @@ const App = (props) => {
           padding: '20px 20px',
         }}
       >
-        <Counter />
+        <Form />
       </main>
     </>
   );

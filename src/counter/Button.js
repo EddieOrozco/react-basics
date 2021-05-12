@@ -11,11 +11,23 @@ const Button = (props) => {
     } else {
       props.setPoints(props.points - 1);
     }
-
     console.log('clicked');
   };
+  const mouseEnters = (e) => {
+    console.log('Mouse went inside the button');
+    console.log(e);
+  };
+  const mouseLeft = (e) => {
+    console.log('Mouse left button');
+    console.log(e);
+  };
   return (
-    <button className='counter__minus' onClick={clickedBtn}>
+    <button
+      className='counter__minus'
+      onClick={clickedBtn}
+      onMouseEnter={mouseEnters}
+      onMouseLeave={mouseLeft}
+    >
       {props.children}
     </button>
   );
