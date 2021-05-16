@@ -25,7 +25,7 @@ class B extends Component {
         <StateContext.Consumer>
           {(context) => (
             <h2>
-              Name:{context.name} {context.age}
+              Name:{context.state.name} {context.state.age}
             </h2>
           )}
         </StateContext.Consumer>

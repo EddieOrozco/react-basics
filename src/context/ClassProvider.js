@@ -7,12 +7,17 @@ export class GlobalStateProvider extends Component {
     super(props);
   }
   state = {
-    name: 'Eddie',
+    name: ' Eddie',
     age: 29,
+  };
+  handleChange = (e) => {
+    this.setState({ ...this.state, name: e.target.value });
   };
   render() {
     return (
-      <StateContext.Provider value={this.state}>
+      <StateContext.Provider
+        value={{ state: this.state, handleChange: this.handleChange }}
+      >
         {this.props.children}
       </StateContext.Provider>
     );

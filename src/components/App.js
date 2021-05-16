@@ -70,7 +70,12 @@ const App = (props) => {
                   padding: '20px 20px',
                 }}
               >
-                <h1>name: {context.name}</h1>
+                <input
+                  type='text'
+                  value={context.state.name}
+                  onChange={context.handleChange}
+                />
+                <h1>name: {context.state.name}</h1>
                 <A>
                   <B></B>
                 </A>
