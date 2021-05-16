@@ -3,6 +3,9 @@ import Header from './Header';
 import Logo from './Logo';
 import Counter from '../counter/Counter';
 import Form from '../form/Form';
+import { GlobalStateProvider, StateContext } from '../context/ClassProvider';
+import A from '../context/A';
+import B from '../context/B';
 
 let data = [
   {
@@ -45,26 +48,39 @@ let data = [
 
 const App = (props) => {
   return (
-    <>
-      <Header>
-        <Logo>Logo</Logo>
-        <nav>
-          <a href='/'>link</a>
-          <a href='/'>link</a>
-          <a href='/'>link</a>
-        </nav>
-      </Header>
-      <main
-        style={{
-          margin: '0 auto',
-          width: '100%',
-          maxWidth: '960px',
-          padding: '20px 20px',
+    <GlobalStateProvider>
+      <StateContext.Consumer>
+        {(context) => {
+          console.log(context);
+          return (
+            <>
+              <Header>
+                <Logo>Logo</Logo>
+                <nav>
+                  <a href='/'>link</a>
+                  <a href='/'>link</a>
+                  <a href='/'>link</a>
+                </nav>
+              </Header>
+              <main
+                style={{
+                  margin: '0 auto',
+                  width: '100%',
+                  maxWidth: '960px',
+                  padding: '20px 20px',
+                }}
+              >
+                <h1>name: {context.name}</h1>
+                <A>
+                  <B></B>
+                </A>
+                {/* <Form /> */}
+              </main>
+            </>
+          );
         }}
-      >
-        <Form />
-      </main>
-    </>
+      </StateContext.Consumer>
+    </GlobalStateProvider>
   );
 };
 
