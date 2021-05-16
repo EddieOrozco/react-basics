@@ -7,7 +7,7 @@ export class GlobalStateProvider extends Component {
     super(props);
   }
   state = {
-    name: ' Eddie',
+    name: 'Eddie',
     age: 29,
   };
   handleChange = (e) => {

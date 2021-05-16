@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StateContext } from './ClassProvider';
+// import { StateContext } from './ClassProvider';
+import { StateContext } from './FuncProvider';
 
 class B extends Component {
   constructor(props) {
