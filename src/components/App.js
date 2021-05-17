@@ -7,6 +7,7 @@ import Logo from './Logo';
 import { GlobalStateProvider, StateContext } from '../context/FuncProvider';
 import A from '../context/A';
 import B from '../context/B';
+import C from '../context/C';
 
 // let data = [
 //   {
@@ -78,7 +79,9 @@ const App = (props) => {
                 />
                 <h1>name: {context.state.name}</h1>
                 <A>
-                  <B></B>
+                  <B>
+                    <C></C>
+                  </B>
                 </A>
                 {/* <Form /> */}
               </main>
